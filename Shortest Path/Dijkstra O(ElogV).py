@@ -29,7 +29,7 @@ def dijkstra(start):
 
         for i in graph[now]:
             cost = dist + i[1]
-            
+
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
@@ -42,3 +42,29 @@ for i in range(1, n+1):
         print("INFINITY")
     else:
         print(distance[i])
+
+
+"""
+-INPUT-
+6 11
+1
+1 2 2
+1 3 5
+1 4 1
+2 3 3
+2 4 2
+3 2 3
+3 6 5
+4 3 3
+4 5 1
+5 3 1
+5 6 2
+
+-OUTPUT-
+0
+2
+3
+1
+2
+4
+"""
